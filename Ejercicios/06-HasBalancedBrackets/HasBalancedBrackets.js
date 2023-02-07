@@ -6,12 +6,12 @@ function HasBalancedBrackets(string) {
   const stack = []
 
   string.split('').forEach(b => {
-    if (['(', '[', '{'].includes(b)) stack.push(b)
-    if ([')', ']', '}'].includes(b)) {
+    if (op.includes(b)) stack.push(b)
+    if (end.includes(b)) {
       if (op.indexOf(stack.pop()) !== end.indexOf(b)) valid = false
     }
   })
-  if (stack.length > 0) valid = false
+  if (stack.length) valid = false
 
   return valid
 }
